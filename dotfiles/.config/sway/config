@@ -1,0 +1,11 @@
+# Load config files
+include ~/.config/sway/general/vars
+include ~/.config/sway/general/*
+include ~/.config/sway/appearance/*
+include ~/.config/sway/hardware/*
+include ~/.config/sway/misc/*
+include ~/.config/sway/outputs
+include ~/.config/sway/workspaces
+include @sysconfdir@/sway/config.d/*
+
+# vim:set ft=conf:

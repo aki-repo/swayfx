@@ -1,0 +1,55 @@
+# Decoration
+
+# SwayFX settings
+corner_radius 4
+shadows disable
+blur disable
+titlebar_separator disable
+
+# Font
+font monospace 18
+font pango: monospace 18
+
+# Gaps
+gaps outer 0
+gaps inner 4
+
+# Titlebar and border configuration
+# SwayFX BUG: https://github.com/WillPower3309/swayfx/issues/201
+# Looks off if > 0
+titlebar_border_thickness 0
+
+# Border
+set $border_width 1
+# default_border pixel $border_width
+# default_floating_border pixel $border_width
+default_border normal $border_width
+default_floating_border normal $border_width
+
+# Window Titlebar
+for_window [class=".*"] title_format "<span rise='3500' font='sans 10'><b>%title</b></span>"
+titlebar_padding 12 4
+title_align left
+
+# Disable titlebar for certain windows
+for_window {
+    [app_id="^vpn$"] border pixel $border_width
+    [app_id="^editor$"] border pixel $border_width
+    [app_id="^org$"] border pixel $border_width
+    [app_id="firefox"] border pixel $border_width
+    [app_id="LibreWolf"] border pixel $border_width
+    [class="Chromium"] border pixel $border_width
+    [app_id="Chromium"] border pixel $border_width
+    [app_id="org.qutebrowser.qutebrowser"] border pixel $border_width
+    [title=".* is sharing your screen."] border pixel $border_width
+    [app_id="firefox" title="Firefox — Sharing Indicator"] border pixel $border_width
+    [app_id="gimp-2.99" title="GIMP Startup"] border pixel $border_width
+    [app_id="com.github.maoschanz.drawing"] border pixel $border_width
+    [class="^battle.net.exe$"] border pixel $border_width
+    [class="^steam$"] border pixel $border_width
+    [class="^leagueclient.exe$"] border pixel $border_width
+    [class="^leagueclientux.exe$"] border pixel $border_width
+    [app_id="^chrome$"] border pixel $border_width
+}
+
+# vim:set ft=conf:
