@@ -8,11 +8,9 @@
 - [Gallery 📸](#gallery)
 - [Keybindings ⌨️](#keybindings-%EF%B8%8F)
 - [Firefox/Librewolf config 🦊](#firefox-librewolf-config)
-- [License](#license)
 
-# **About ⁉️**
-## Hello! Thanks for dropping by 👋
-This is **pengurice**, a script that automatically rice your **Linux** system. I made this for people who wants a simple, productive and eyecandy Linux desktop.
+
+Simple SwayFx
 
 # **Starring 🌠**
 <img src="https://i.imgur.com/wEtP8uS.png" align="right" width="400px">
@@ -31,12 +29,11 @@ and so on!
 
 # **Installation 🛠️**
 ## Distros
-Now this script only supports **Arch Linux** and **Arch-based** distros (EndeavourOS, Artix Linux, Arco Linux, ArchCraft, ...) because I'm too lazy to maintain it for other distros (but you can install manually).
+Arch 
 
 ## Install with git
 ```
-$ git clone --depth 1 https://codeberg.org/pznguin-kyun/pengurice
-$ cd pengurice
+$ git clone --depth 1 https://github.com/aki-repo/swayfx
 # ./install
 ```
 
@@ -55,15 +52,8 @@ brightnessctl btop calcurse dunst foot gammastep mpc mpd ncmpcpp neofetch power-
 - Copy all files in `dotfiles` and paste to your `$HOME` folder
 
 ## Some notes
-- If your system doesn't have `bash`, install it.
-- This script **MUST BE** run as `root`.
+- you need bash, be root
 
-# **Gallery 📸**
-| Floating                                 | Tiling                                     |
-| :--------------------------------------- | :----------------------------------------- |
-| ![busy](https://i.imgur.com/wEtP8uS.png) | ![tiling](https://i.imgur.com/7WXasqX.png) |
-| Launcher                                 | Lockscreen                                 |
-| ![rofi](https://i.imgur.com/vULQ9o4.png) | ![lock](https://i.imgur.com/2meHf4D.png)   |
 
 # **Keybindings ⌨️**
 These are the basic keybinds. Read through the `sway/general/keybindings.conf` file for more keybinds.
@@ -91,4 +81,4 @@ See [firefox.md](firefox.md)
 # **License**
 This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
 
-<h1 align="center"><b>🌟 Good Luck and Seeya! 🌟</b></h1>
+
