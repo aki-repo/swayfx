@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-# pengurice: pznguin-kyun's auto rice script
-# by pznguin-kyun <p3nguinkun@proton.me>
-# See LICENSE file for copyright and license details.
-# To understand everything else, start reading main().
+# swayfx install script, inspired by pznguin-kyun
+# upgraded with rust based apps
 
 # consts
 CRE=$(tput setaf 1)
@@ -13,16 +11,16 @@ CNC=$(tput sgr0)
 
 # vars
 date=$(date +%Y%m%d-%H%M%S)
-git_repo="https://codeberg.org/pznguin-kyun/pengurice"
+git_repo="https://github.com/aki-repo/swayfx"
 branch="main"
 main_folder="dotfiles"
 packages=(bash bibata-cursor-theme-bin blueman bluez bluez-utils brightnessctl btop \
           calcurse cliphist dunst foot galculator gammastep git grim gtk-engine-murrine \
           gvfs gvfs-afc gvfs-mtp gvfs-smb imv libnotify librewolf-bin lxappearance-gtk3 ly \
-          mpc mpd mpv ncmpcpp nemo neofetch neovim networkmanager network-manager-applet \
+          mpc mpd mpv ncmpcppp rmpc nemo neofetch neovim networkmanager network-manager-applet \
           noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra nwg-displays pamixer \
           papirus-icon-theme pavucontrol pipewire pipewire-pulse polkit-gnome power-profiles-daemon \
-          ranger rofi sed slurp sof-firmware sudo swaybg swayfx swayidle swaylock-effects ttf-iosevka-nerd \
+          yazi rofi sed slurp sof-firmware sudo swaybg swayfx swayidle swaylock-effects ttf-iosevka-nerd \
           ttf-nerd-fonts-symbols udisks2 unzip waybar wireplumber wl-clipboard xdg-desktop-portal-gtk \
           xdg-desktop-portal-wlr xdg-user-dirs-gtk xorg-drivers xorg-xwayland xsettingsd zathura zathura-pdf-mupdf zip zsh)
 
@@ -46,7 +44,7 @@ bootstraps(){
     trap 'rm -f /etc/sudoers.d/pengurice-temp'
     echo "%wheel ALL=(ALL) NOPASSWD: ALL
 Defaults:%wheel runcwd=*" > /etc/sudoers.d/pengurice-temp
-    
+
     # dbus UUID must be generated for Artix runit.
     dbus-uuidgen >/var/lib/dbus/machine-id
 }
@@ -81,9 +79,9 @@ update(){
 setup_before_install(){
     logo "Setup before install"
     pacman -Sy --noconfirm --needed curl git base-devel
-    if ! command -v yay &>/dev/null; then
-        rm -rf /tmp/aur 
-        git clone https://aur.archlinux.org/yay-bin.git /tmp/aur
+    if ! command -v paru &>/dev/null; then
+        rm -rf /tmp/aur
+        git clone https://aur.archlinux.org/paru.git /tmp/aur
         chmod 777 /tmp/aur
         cd /tmp/aur
         sudo -u "$username" makepkg -si --noconfirm
@@ -102,7 +100,7 @@ setup_before_install(){
 
 install_pkgs(){
     logo "Installing packages"
-    sudo -u "$username" yay -Sy --noconfirm --needed "${packages[@]}"
+    sudo -u "$username" paru -Sy --noconfirm --needed "${packages[@]}"
 }
 
 setup_user(){
