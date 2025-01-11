@@ -1,5 +1,5 @@
-<h1 align="center"><b>✨ pengurice ✨ </b></h1>
-<p align="center">📜 A script that rice your Linux/*nix system.</p>
+
+<p align="center"> SwayFX install script</p>
 
 # **Table of Contents**
 - [About ⁉️](#about-%EF%B8%8F)
